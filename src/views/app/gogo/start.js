@@ -1,10 +1,20 @@
 import React from 'react';
-import { Row } from 'reactstrap';
-import IntlMessages from 'helpers/IntlMessages';
+import { Row, Col } from 'reactstrap';
+
+// import { Row } from 'reactstrap';
+// import IntlMessages from 'helpers/IntlMessages';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
 import Breadcrumb from 'containers/navs/Breadcrumb';
+import Filter from 'components/SearchPageComponents/Filter';
+import NavBarSearchResults from 'components/SearchPageComponents/NavSearchResult';
+import SortingFilterSearchResult from 'components/SearchPageComponents/SortingFilterSearchResult';
+
+// import DatePickerExamples from '../../../containers/forms/DatePickerExamples';
 
 const Start = ({ match }) => (
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // const toggle = () => setDropdownOpen(!dropdownOpen);
   <>
     <Row>
       <Colxx xxs="12">
@@ -14,10 +24,22 @@ const Start = ({ match }) => (
     </Row>
     <Row>
       <Colxx xxs="12" className="mb-4">
-        <p>
-          <IntlMessages id="menu.start" />
-        </p>
+        <h1>Search for verified publishers</h1>
       </Colxx>
+    </Row>
+    <Row>
+      <Filter />
+    </Row>
+    <Row>
+      <Col>
+        <NavBarSearchResults />
+      </Col>
+    </Row>
+    {/* SearchREsultMini Filter */}
+    <Row>
+      <Col>
+      <SortingFilterSearchResult/>
+      </Col>
     </Row>
   </>
 );

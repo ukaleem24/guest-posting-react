@@ -1,0 +1,14 @@
+div.scrollmenu {
+    
+    overflow: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid lightgrey;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    
+    text-align: center;
+    padding:7px 21px 7px 0px;
+    text-decoration: none;
+  }
