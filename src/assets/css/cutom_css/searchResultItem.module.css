@@ -1,0 +1,23 @@
+
+
+.labels{
+    margin: 0px 0px 0px;
+}
+.labelsValueContainer{
+    padding: 0px
+}
+.labelsValueAdjustingMargin{
+    margin: 0px 0px 0px;
+}
+
+.card{
+    margin-bottom: 6px;
+}
+
+.card_body {
+    padding: 1rem;
+}
+.buttonColAdjustment{
+    float: right;
+    margin-bottom: 10px;
+}

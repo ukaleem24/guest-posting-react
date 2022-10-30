@@ -69,7 +69,7 @@ const Filter = () => {
                     <FormGroup row>
                       <Col>
                         <Input
-                          className="inputTypeText"
+                         className={classes.inputTypeText}
                           id="DRRange"
                           type="text"
                         />

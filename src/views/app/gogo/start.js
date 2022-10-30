@@ -8,6 +8,7 @@ import Breadcrumb from 'containers/navs/Breadcrumb';
 import Filter from 'components/SearchPageComponents/Filter';
 import NavBarSearchResults from 'components/SearchPageComponents/NavSearchResult';
 import SortingFilterSearchResult from 'components/SearchPageComponents/SortingFilterSearchResult';
+import SearchResultList from 'components/SearchPageComponents/SearchResultList';
 
 // import DatePickerExamples from '../../../containers/forms/DatePickerExamples';
 
@@ -39,6 +40,11 @@ const Start = ({ match }) => (
     <Row>
       <Col>
       <SortingFilterSearchResult/>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+      <SearchResultList/>
       </Col>
     </Row>
   </>
