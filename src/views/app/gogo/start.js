@@ -5,10 +5,16 @@ import { Row, Col } from 'reactstrap';
 // import IntlMessages from 'helpers/IntlMessages';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
 import Breadcrumb from 'containers/navs/Breadcrumb';
+<<<<<<< Updated upstream
 import Filter from 'components/SearchPageComponents/Filter';
 import NavBarSearchResults from 'components/SearchPageComponents/NavSearchResult';
 import SortingFilterSearchResult from 'components/SearchPageComponents/SortingFilterSearchResult';
 import SearchResultList from 'components/SearchPageComponents/SearchResultList';
+=======
+import Filter from 'components/search/Filter';
+import NavBarSearchResults from 'components/search/NavSearchResult';
+import SortingFilterSearchResult from 'components/search/SortingFilterSearchResult';
+>>>>>>> Stashed changes
 
 // import DatePickerExamples from '../../../containers/forms/DatePickerExamples';
 
@@ -39,7 +45,7 @@ const Start = ({ match }) => (
     {/* SearchREsultMini Filter */}
     <Row>
       <Col>
-      <SortingFilterSearchResult/>
+        <SortingFilterSearchResult />
       </Col>
     </Row>
     <Row>
