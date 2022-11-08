@@ -57,6 +57,8 @@ export const setContainerClassnames = (
   strCurrentClasses,
   selectedMenuHasSubItems
 ) => {
+  console.log(strCurrentClasses);
+  console.log( clickIndex)
   const currentClasses = strCurrentClasses
     ? strCurrentClasses.split(' ').filter((x) => x !== '')
     : '';

@@ -5,8 +5,12 @@ import { withRouter } from 'react-router-dom';
 import TopNav from 'containers/navs/Topnav';
 import Sidebar from 'containers/navs/Sidebar';
 import Footer from 'containers/navs/Footer';
+// import Sidebar from 'components/search/testing';
+// import classes from './cheking.module.css';
+
 
 const AppLayout = ({ containerClassnames, children, history }) => {
+  // const AppLayout = ({  children, history }) => {
   return (
     <div id="app-container" className={containerClassnames}>
       <TopNav history={history} />
@@ -16,6 +20,14 @@ const AppLayout = ({ containerClassnames, children, history }) => {
       </main>
       <Footer />
     </div>
+    // <div id="app-container" >
+    //   <TopNav history={history} />
+    //   <Sidebar />
+    //   <div>
+    //     <div className={classes.container}>{children}</div>
+    //   </div>
+    //   <Footer />
+    // </div>
   );
 };
 const mapStateToProps = ({ menu }) => {

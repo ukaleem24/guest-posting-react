@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {
-//   Card,
-//   CardBody,
+  Card,
+  CardBody,
   Input,
   Row,
   Col,
@@ -19,8 +19,8 @@ import classes from "../../assets/css/cutom_css/searchpageFilter.module.css"
 const Filter = () => {
   return (
     <Colxx xxs="12" className="mb-4">
-      {/* <Card>
-        <CardBody> */}
+      <Card>
+        <CardBody>
           <Form>
             <Row>
               <Colxx>
@@ -358,8 +358,8 @@ const Filter = () => {
               </Colxx>
             </Row>
           </Form>
-        {/* </CardBody>
-      </Card> */}
+        </CardBody>
+      </Card>
     </Colxx>
   );
 };

@@ -1,6 +1,10 @@
 .container{
     margin-top: 20px;
 }
+.heading{
+    color: #7e7e7e ;
+    font-weight: bold;
+}
 .dropDown{
     border: 0;
     background-color: transparent;

@@ -5,10 +5,51 @@ div.scrollmenu {
     border-bottom: 1px solid lightgrey;
   }
   
-  div.scrollmenu a {
+  /* div.scrollmenu a {
     display: inline-block;
-    
+   
     text-align: center;
-    padding:7px 21px 7px 0px;
+   
     text-decoration: none;
+  } */
+
+  .navbar_item{
+    margin-right: 21px;
+    padding:7px 0px ;
+    display: inline-block;
+   
+    text-align: center;
+   
+    text-decoration: none;
+  }
+  .navbar_item:focus{
+   
+    border-top: 4px solid   #922c88;
+    color:#922c88;
+   
+ 
+ 
+    
+    /* border:2px solid #922c88;
+    border-radius: 10px;
+   
+    bottom: 0;
+    left: 0;
+    border:2px solid #922c88;
+    width: 50%; */
+  
+
+    /* content: ' ';
+    background: #922c88;
+    border-radius: 10px;
+    position: absolute;
+    width: calc(100% - 1rem);
+    height: 5px;
+    top: 0;
+    left: 50%; */
+   
+    
+    
+    
+
   }

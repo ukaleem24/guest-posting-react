@@ -380,7 +380,8 @@ class Sidebar extends Component {
                             target="_blank"
                           >
                             <i className={item.icon} />{' '}
-                            <IntlMessages id={item.label} />
+                            {/* <IntlMessages id={item.label} /> */}
+                            <p>checking 1</p>
                           </a>
                         ) : (
                           <NavLink
@@ -390,6 +391,7 @@ class Sidebar extends Component {
                           >
                             <i className={item.icon} />{' '}
                             <IntlMessages id={item.label} />
+                            {/* <p>checking 2</p> */}
                           </NavLink>
                         )}
                       </NavItem>

@@ -8,7 +8,7 @@ const SortingFilterSearchResult = () => {
   return (
     <Row className={classes.container}>
       <Col sm={4}>
-        <h2>Search Results</h2>
+        <h2 className={classes.heading}>Search Results</h2>
       </Col>
       <Col sm={3} />
 

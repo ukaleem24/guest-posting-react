@@ -1,7 +1,16 @@
 
-
+.item_header{
+    color: #922c88;
+    padding: 10px 0px 0px 10px;
+    /* padding: 0px 15px 0px 0px; */
+    /* margin: 0px 0px 10px 0px;     */
+}
+.url{
+    margin: 0px 0px 0px 0px;
+}
 .labels{
     margin: 0px 0px 0px;
+    color: #7e7e7e ;
 }
 .labelsValueContainer{
     padding: 0px
@@ -12,12 +21,29 @@
 
 .card{
     margin-bottom: 6px;
+    border: 0.5px solid #c5c4c4;
 }
 
 .card_body {
-    padding: 1rem;
+    padding: 0rem 1rem 0rem 1rem;
 }
-.buttonColAdjustment{
+.button{
     float: right;
-    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    
+   
+}
+
+.button_row{
+    background-color:  #faefef  ;
+    padding:5px 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.button_row_container{
+    padding:0px 0px 10px 0px
+}
+.button_col_container{
+    padding:0px 20px 0px 20px
+    
 }

@@ -8,14 +8,19 @@ const SearchResultItem = ({item}) => {
       <CardBody className={classes.card_body}>
         <Row className={classes.container}>
           <Col >
-            <Row >
-              <Col sm={10}>
-                <p className=''>URL is Hidden</p>
+          <div className={classes.button_row_container}>
+            <Row  className={classes.button_row}>
+              
+              <Col className={[classes.item_header]} sm={10}>
+                <p className={classes.url}>URL is Hidden</p>
               </Col>
-              <Col sm={2} >
-                <Button className={classes.buttonColAdjustment}>Buy Post</Button>
+              <Col sm={2}   className={classes.button_col_container}>
+                <div  className={classes.button_container}>
+                <Button className={classes.button}>Buy Post</Button>
+                </div>
               </Col>
-            </Row>
+            </Row> 
+            </div> 
             <Row>
               <Col sm={5}>
                 <Row>
