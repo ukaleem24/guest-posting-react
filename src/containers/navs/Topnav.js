@@ -2,6 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-use-before-define */
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { sidebarButtonActions } from 'redux/sidebar-button-slice';
 // import { injectIntl } from 'react-intl';
 
 import {
@@ -29,13 +31,23 @@ import {
   // adminRoot,
 } from 'constants/defaultValues';
 
-import { MobileMenuIcon, MenuIcon } from 'components/svg';
+import { MobileMenuIcon } from 'components/svg';
 // import { getDirection, setDirection } from 'helpers/Utils';
 // import TopnavEasyAccess from './Topnav.EasyAccess';
-// import TopnavNotifications from './Topnav.Notifications';
-// import TopnavDarkSwitch from './Topnav.DarkSwitch';
+import TopnavNotifications from './Topnav.Notifications';
+import TopnavDarkSwitch from './Topnav.DarkSwitch';
+
+
 
 const TopNav = () => {
+
+  const dispatch=useDispatch();
+
+  const sideBarHandler=()=>{
+    dispatch(sidebarButtonActions.toggal());
+  }
+
+
   
   return (
     <nav className="navbar fixed-top">
@@ -44,15 +56,15 @@ const TopNav = () => {
           to="#"
           location={{}}
           className="menu-button d-none d-md-block"
-         
+         onClick={sideBarHandler}
         >
-          <MenuIcon />
+          <MobileMenuIcon />
         </NavLink>
         <NavLink
           to="#"
           location={{}}
           className="menu-button-mobile d-xs-block d-sm-block d-md-none"
-          
+          onClick={sideBarHandler}
         >
           <MobileMenuIcon />
         </NavLink>
@@ -104,23 +116,22 @@ const TopNav = () => {
       </NavLink>
 
       <div className="navbar-right">
-        {/* {isDarkSwitchActive && <TopnavDarkSwitch />}
+        {true && <TopnavDarkSwitch />}
         <div className="header-icons d-inline-block align-middle">
-          <TopnavEasyAccess />
+          {/* <TopnavEasyAccess /> */}
           <TopnavNotifications />
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"
-            id="fullScreenButton"
-            
+            id="fullScreenButton"  
           >
-            {false ? (
+            {true ? (
               <i className="simple-icon-size-actual d-block" />
             ) : (
               <i className="simple-icon-size-fullscreen d-block" />
             )}
           </button>
-        </div> */}
+        </div>
         <div className="user d-inline-block">
           <UncontrolledDropdown className="dropdown-menu-right">
             <DropdownToggle className="p-0" color="empty">

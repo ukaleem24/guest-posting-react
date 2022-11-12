@@ -17,7 +17,7 @@
     background-color: #777;
   } */ 
 
-  .main_menu {
+  .slide {
     width: 200px;
     height: 90%;
     background: white;
@@ -28,4 +28,21 @@
     padding-top: 10px;
     padding-bottom: 10px;
     left: 0;
+    transition: 0.5s ease;
+    transform: translateX(0px);
+  }
+  
+  .hide_slide{
+    width: 200px;
+    height: 90%;
+    background: white;
+   
+    position: fixed;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* transition: transform $menu-collapse-time; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 0;
+    transition: 0.5s ease;
+    transform: translateX(-200px);
   }

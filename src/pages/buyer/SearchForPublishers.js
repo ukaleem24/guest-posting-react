@@ -5,6 +5,7 @@ import TopNav from 'containers/navs/Topnav';
 // import Sidebar from 'containers/navs/Sidebar';
 import Footer from 'containers/navs/Footer';
 import Sidebar from 'components/search/testing';
+import Start from 'views/app/gogo/start';
 // import classes from './cheking.module.css';
 
 
@@ -18,7 +19,7 @@ const SearchForPublishers = () => {
     <div id="app-container" >
       <TopNav  />
       <Sidebar />
-      
+      <Start/>
       <Footer />
     </div>
     // <div id="app-container" >

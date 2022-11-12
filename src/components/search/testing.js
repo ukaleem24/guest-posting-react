@@ -1,14 +1,15 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React  from 'react';
+
 
 // import ReactDOM from 'react-dom';
-import { Nav, NavItem,NavLink } from 'reactstrap';
+import {  Nav, NavItem,NavLink } from 'reactstrap';
 // import { NavLink } from 'react-router-dom';
 // import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // import IntlMessages from 'helpers/IntlMessages';
-
+import { useSelector } from 'react-redux';
 import classes from "./testing.module.css"
 
 
@@ -17,9 +18,15 @@ import classes from "./testing.module.css"
 
 const Sidebar =()=>{
 
+  const sidebarButtonPressed=useSelector((state)=>state.sidebarButtonPressed);
+
+
+
+ 
+
     return (
       <div className="sidebar">
-        <div className={classes.main_menu}>
+        <div className={sidebarButtonPressed ?classes.hide_slide:classes.slide}>
           {/* <div className="scroll"> */}
             <PerfectScrollbar
               options={{ suppressScrollX: true, wheelPropagation: false }}
@@ -39,6 +46,7 @@ const Sidebar =()=>{
                     Disabled Link
                   </NavLink>
                 </NavItem>
+                
               </Nav>
             </PerfectScrollbar>
           {/* </div> */}
