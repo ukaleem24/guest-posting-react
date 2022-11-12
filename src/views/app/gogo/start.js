@@ -44,7 +44,7 @@ const Start = ({ match }) => (
     </Row>
     <Row>
       <Col>
-      <SearchResultList/>
+        <SearchResultList />
       </Col>
     </Row>
    
