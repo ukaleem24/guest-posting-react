@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-
+import "./testing.css"
 // import { Row } from 'reactstrap';
 // import IntlMessages from 'helpers/IntlMessages';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
@@ -25,7 +25,7 @@ const Start = () => (
     </Row>
     <Row>
       <Colxx xxs="12" className="mb-4">
-        <h1>Search for verified publishers</h1>
+        <h1 className='search-label'>Search for verified publishers</h1>
       </Colxx>
     </Row>
     <Row>

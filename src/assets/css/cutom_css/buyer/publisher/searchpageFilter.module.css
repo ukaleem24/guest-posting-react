@@ -18,6 +18,10 @@
     background-color: #f8f8f8   ;
 }
 
+.card_Constainer{
+    border-radius: 14px;
+}
+
 @media (max-width:40rem){
     .inputTypeText{
         border-radius: 7px;

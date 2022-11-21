@@ -1,0 +1,39 @@
+.container{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.heading{
+    color: #7e7e7e ;
+    font-weight: bold;
+}
+.dropdownmenu{
+    border-radius: 12px;
+}
+.dropdown{
+    color: #7e7e7e;
+    background-color: transparent;  
+    border-color: #7e7e7e;
+    padding: 4px 12px;  
+    font-size: 10px;
+    margin-right: 10px;
+}
+.dropdown:hover{
+    background-color:  #922c88 ;
+    border-color:#922c88 ;
+}
+.adjusting{
+    padding: 0px 15px 0px 15px;
+    float:right
+}
+/* .colAdjustment{
+    margin-left:-30px
+} */
+
+/* @media (max-width:40rem){
+    .dropDown2{
+        
+        max-width: 13rem;
+          
+    }
+} */
+

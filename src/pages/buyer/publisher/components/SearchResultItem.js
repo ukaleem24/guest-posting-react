@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardBody, Row, Col, Button, FormGroup } from 'reactstrap';
-import classes from '../../assets/css/cutom_css/searchResultItem.module.css';
+import classes from "assets/css/cutom_css/buyer/publisher/searchResultItem.module.css";
 
 const SearchResultItem = ({item}) => {
   return (

@@ -1,4 +1,4 @@
-
+/* 
 .label{
     margin-bottom: -4px;
 }
@@ -17,4 +17,9 @@
         border-radius: 7px;
         max-width: 10rem;
     }
+} */
+
+.search-label{
+    color: #7e7e7e;
+     
 }

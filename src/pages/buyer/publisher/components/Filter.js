@@ -13,13 +13,13 @@ import {
 } from 'reactstrap';
 import { Colxx } from 'components/common/CustomBootstrap';
 // import classNames from 'classnames';
-import classes from "../../assets/css/cutom_css/searchpageFilter.module.css"
+import classes from "../../../../assets/css/cutom_css/buyer/publisher/searchpageFilter.module.css"
 
 
 const Filter = () => {
   return (
     <Colxx xxs="12" className="mb-4">
-      <Card>
+      <Card className={classes.card_Constainer}>
         <CardBody>
           <Form>
             <Row>
