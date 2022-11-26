@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   Row,
   Col,
@@ -9,10 +9,10 @@ import {
 } from 'reactstrap';
 import classes from '../../../../assets/css/cutom_css/buyer/publisher/SortingFilterSearchResult.module.css';
 
-const SortingFilterSearchResult = () => {
+const SortingFilterSearchResult = ({OnSavePostPerPage}) => {
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
-  const [perPAgeValue, setPerPageValue] = useState('30 Per Page');
+  const [perPAgeValue, setPerPageValue] = useState(10);
   const [mainFilterValue, setMainFilterValue] = useState(
     'Best price and Completion rate'
   );
@@ -22,11 +22,16 @@ const SortingFilterSearchResult = () => {
 
   const perPageHandler = (value) => {
     setPerPageValue(value);
-  };
+  };  
 
   const mainFilterHandler = (value) => {
     setMainFilterValue(value);
   };
+
+
+  useEffect(()=>{
+    OnSavePostPerPage(perPAgeValue);
+  },[perPAgeValue])
 
   return (
     <Row className={classes.container}>
@@ -41,17 +46,17 @@ const SortingFilterSearchResult = () => {
               <Dropdown isOpen={dropdownOpen1} toggle={toggle1}>
                 <DropdownToggle className={classes.dropdown} caret>
                   {' '}
-                  Show: {perPAgeValue}
+                  Show: {perPAgeValue}{" Per Page"}
                 </DropdownToggle>
                 <DropdownMenu className={classes.dropdownmenu}>
-                  <DropdownItem onClick={() => perPageHandler('30 Per Page')}>
-                    30 Per Page
+                  <DropdownItem onClick={() => perPageHandler(10)}>
+                    10 Per Page
                   </DropdownItem>
-                  <DropdownItem onClick={() => perPageHandler('20 Per Page')}>
+                  <DropdownItem onClick={() => perPageHandler(20)}>
                     20 Per Page
                   </DropdownItem>
-                  <DropdownItem onClick={() => perPageHandler('10 Per Page')}>
-                    10 Per Page
+                  <DropdownItem onClick={() => perPageHandler(30)}>
+                    30 Per Page
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
