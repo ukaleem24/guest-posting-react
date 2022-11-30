@@ -30,7 +30,9 @@ const Sidebar = () => {
               <NavItem className={classes.navitem}>
                 <NavLink
                   href="#"
-                  className={(navData)=> navData.isActive?classes.navlink_active:classes.navlink }
+                  className={(navData) =>
+                    navData.isActive ? classes.navlink_active : classes.navlink
+                  }
                   to="/marketer/publishers"
                 >
                   <i className="simple-icon-people" />
@@ -44,14 +46,26 @@ const Sidebar = () => {
                 </NavLink>
               </NavItem>
               <NavItem className={classes.navitem}>
-                <NavLink href="#" className={classes.navlink}>
+                <NavLink
+                  href="#"
+                  className={(navData) =>
+                    navData.isActive ? classes.navlink_active : classes.navlink
+                  }
+                  to="/marketer/tasks"
+                >
                   Task
                 </NavLink>
               </NavItem>
               <NavItem className={classes.navitem}>
-                <NavLink href="#" className={classes.navlink}>
+                <NavLink
+                  href="#"
+                  className={(navData) =>
+                    navData.isActive ? classes.navlink_active : classes.navlink
+                  }
+                  to="/marketer/content-purchase"
+                >
                   <i className="iconsminds-pen" />
-                  Content Purchase
+                  Content Purchase 
                 </NavLink>
               </NavItem>
             </Nav>
