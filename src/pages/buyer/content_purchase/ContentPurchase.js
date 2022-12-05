@@ -11,11 +11,13 @@ import NavBar from './Components/NavBar';
 // import classes from 'assets/css/cutom_css/buyer/task/task.module.css';
 
 const ContentPurchase = () => {
+
+
   return (
     <>
       <Row>
         <Colxx xxs="12">
-          <Breadcrumb activePage="Content purchase" />
+          <Breadcrumb activePage="Content Purchase"   />
           <Separator className="mb-5" />
         </Colxx>
       </Row>

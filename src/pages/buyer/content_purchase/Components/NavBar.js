@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavItem } from 'reactstrap';
-import classes from '../../../../assets/css/cutom_css/buyer/task/navbar.module.css';
+import classes from '../../../../assets/css/cutom_css/buyer/content_purchase/navbar.module.css';
 
 // import {
 //   //   Row,

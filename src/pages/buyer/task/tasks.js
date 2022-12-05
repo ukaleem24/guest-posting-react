@@ -9,11 +9,14 @@ import NavBar from './components/NavBar';
 // import classes from 'assets/css/cutom_css/buyer/task/task.module.css';
 
 const Tasks = () => {
+
+
+  
   return (
     <>
       <Row>
         <Colxx xxs="12">
-          <Breadcrumb activePage="Tasks" />
+          <Breadcrumb activePage="Tasks"  />
           <Separator className="mb-5" />
         </Colxx>
       </Row>
