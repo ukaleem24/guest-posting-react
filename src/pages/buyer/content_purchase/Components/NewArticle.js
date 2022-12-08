@@ -10,7 +10,7 @@ const NewArticle = () => {
         <Col >
           <div className={classes.highlightsContainer}>
             <div className={classes.highlightsText}>
-              <h4>Want to order a new article?</h4>
+              <h4 className={classes['higlighted-text']}>Want to order a new article?</h4>
             </div>
 
             <div className={classes.highlightsButton}>

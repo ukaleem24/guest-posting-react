@@ -9,7 +9,7 @@ const SearchPublisher = () => {
         <Col sm={6}>
           <div className={classes.highlightsContainer}>
             <div className={classes.highlightsText}>
-              <h4>Want to place more tasks?</h4>
+              <h4 className={classes['higlighted-text']}>Want to place more tasks?</h4>
             </div>
 
             <div className={classes.highlightsButton}>
@@ -20,7 +20,7 @@ const SearchPublisher = () => {
         <Col sm={6}>
           <div className={classes.highlightsContainer}>
             <div className={classes.highlightsText}>
-              <h4>Can&apos;t find the relevant website?</h4>
+              <h4 className={classes['higlighted-text']}>Can&apos;t find the relevant website?</h4>
             </div>
 
             <div className={classes.highlightsButton}>

@@ -23,6 +23,7 @@
     background-color: #40014b;;
     border-color: #40014b;
     color: white; 
+    
 } 
 
 .btnn:hover{
@@ -34,4 +35,9 @@
     background-color: #630374;;
     border-color: #630374;
     color: white; 
+}
+
+.higlighted-text{
+    margin: 0;
+    font-size: 20px;
 }

@@ -20,7 +20,7 @@
 }
 .word-count-item:hover{
     cursor: pointer;
-    background-color: purple;
+    background-color: #c9c9c9;
     border-radius: 10px;
 }
 .card-Container {
@@ -29,9 +29,9 @@
 .word-count-item-container{
     padding: 0px;
 }
-.word-count-text-container{
+/* .word-count-text-container{
     padding: 0px;
-}
+} */
 .word-count-text-container2{
     margin-bottom:8px;
     line-height: 1.3;
@@ -39,7 +39,7 @@
     font-size: 12px;
 }
 .word-count-text{
-    padding: 16px 12px 0px 0px;
+    
     color: #878787;
 }
 
@@ -54,12 +54,87 @@
 
 
 .category-container{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
     border: 1px solid #d7d7d7;
   background-color: #f8f8f8;
   /* text-align: center; */
   border-radius: 10px;
   padding: 16px 12px 16px 12px;
   margin: 0px 2px 30px 2px;
-  width: 500px !important;
+ 
+}
+.drop-down-icon{
+  float: right;
+}
+.category-text{
+  padding: 0px 12px 0px 0px;
+    color: #878787;
+}
+.drop-down-item{
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+/* ///////////////////////////////////////////////////////////// */
+
+.title-container{
+ 
   
+    border: 1px solid #d7d7d7;
+  background-color: #f8f8f8;
+  /* text-align: center; */
+  border-radius: 10px;
+  padding: 16px 12px 16px 12px;
+  margin: 0px 2px 30px 2px;
+ 
+}
+/* ///////////////////////////////////////////////////////////// */
+.article-price-container{
+
+  text-align: center;
+  background-color: #003f5f;
+  color: white;
+  padding:  15px 0px ;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+
+}
+.article-price-label{
+  font-size: 14px;
+  margin: 0px;
+}
+.article-price{
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+.mobile-view-text{
+  margin-top:8px;
+    line-height: 1.3;
+    color: #878787;
+    font-size: 12px;
+}
+.form-btn{
+  background-color: #922c88;
+  border-color: #922c88;
+  color: white; 
+  display: inline-block;
+text-align: center;
+border-radius: 12px !important;
+padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+.form-btn:hover{
+  background-color: #4556ac;
+  border-color: #4556ac;
+  color: white; 
+}
+.form-btn:focus-visible{
+  background-color: #4556ac;
+  border-color: #4556ac;
+  color: white; 
 }
