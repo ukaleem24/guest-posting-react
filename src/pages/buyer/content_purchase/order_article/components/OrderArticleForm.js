@@ -306,7 +306,7 @@ const OrderArticleForm = () => {
           <div >
             <NavLink className={classes['form-btn']}>Order Article</NavLink>
           </div>
-          {/* ///////Article Price starts/////////////////// */}
+          
         </CardBody>
       </Card>
     </>

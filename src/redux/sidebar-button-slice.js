@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={sidebarButtonPressed:false}
 
-const sidebarSlice= createSlice({
+const sidebarButtonSlice= createSlice({
     name:'sidebarbutton',
     initialState,
     reducers:{
@@ -13,6 +13,6 @@ const sidebarSlice= createSlice({
 })
 
 
-export const sidebarButtonActions=sidebarSlice.actions
+export const sidebarButtonActions=sidebarButtonSlice.actions
 
-export default sidebarSlice;
+export default sidebarButtonSlice;

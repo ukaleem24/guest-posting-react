@@ -9,6 +9,10 @@ import Tasks from 'pages/buyer/task/tasks';
 import ContentPurchase from 'pages/buyer/content_purchase/ContentPurchase';
 import OrderArticle from 'pages/buyer/content_purchase/order_article/OrderArticle';
 import CreateTask from 'pages/buyer/task/create_task/CreateTask';
+import PublisherDashboard from 'pages/publisher/PublisherDashboard';
+import Websites from 'pages/publisher/my_websites/Websites';
+import OpenOffers from 'pages/publisher/open_offers/OpenOffers';
+import PublisherTask from "pages/publisher/task/task"
 // import BuyPost from 'pages/buyer/publisher/components/buy_post/BuyPost';
 
 const Router = () => {
@@ -33,6 +37,13 @@ const Router = () => {
             element={<OrderArticle />}
           />
         </Route>
+        <Route path="/publisher" element={<PublisherDashboard/>}>
+            <Route path='/publisher/platform' element={<Websites/>}/>
+            <Route path='/publisher/offer' element={<OpenOffers/>}/>
+            <Route path='/publisher/task' element={<PublisherTask/>}/>
+        </Route>
+
+        {/* </Route> */}
       </Routes>
     </>
   );

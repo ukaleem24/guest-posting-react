@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-use-before-define */
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { sidebarButtonActions } from 'redux/sidebar-button-slice';
+import { UserTypeActions } from 'redux/user-type-slice';
+
 // import { injectIntl } from 'react-intl';
 
 import {
@@ -14,7 +16,7 @@ import {
   Input,
 } from 'reactstrap';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink,useNavigate } from 'react-router-dom';
 // import { connect } from 'react-redux';
 
 // import {
@@ -23,13 +25,12 @@ import { NavLink } from 'react-router-dom';
 //   changeLocale,
 // } from 'redux/actions';
 
-import {
-  // menuHiddenBreakpoint,
-  // searchPath,
-  // localeOptions,
-  // isDarkSwitchActive,
-  // adminRoot,
-} from 'constants/defaultValues';
+import // menuHiddenBreakpoint,
+// searchPath,
+// localeOptions,
+// isDarkSwitchActive,
+// adminRoot,
+'constants/defaultValues';
 
 import { MobileMenuIcon } from 'components/svg';
 // import { getDirection, setDirection } from 'helpers/Utils';
@@ -37,18 +38,42 @@ import { MobileMenuIcon } from 'components/svg';
 import TopnavNotifications from './Topnav.Notifications';
 import TopnavDarkSwitch from './Topnav.DarkSwitch';
 
-
-
 const TopNav = () => {
+  const navigate = useNavigate();
+  const [oppositeUser, setOppositeUser] = useState();
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
-  const sideBarHandler=()=>{
+  const sideBarHandler = () => {
     dispatch(sidebarButtonActions.toggal());
-  }
+  };
 
+  const userTypeHandler = () => {
+    dispatch(UserTypeActions.ChangeUserType());
+  };
 
-  
+  const userType = useSelector((state) => state.usertype.userType);
+  console.log(userType);
+  console.log(userType);
+  console.log(userType);
+  console.log(userType);
+
+  useEffect(() => {
+    if (userType === 'publisher') {
+      setOppositeUser({
+        user: 'Buyer',
+      
+      });
+      navigate('/publisher/platform');
+    } else {
+      setOppositeUser({
+        user: 'Publisher',
+      });
+      navigate('/marketer/publishers');
+            
+    }
+  }, [userType]);
+
   return (
     <nav className="navbar fixed-top">
       <div className="d-flex align-items-center navbar-left">
@@ -56,7 +81,7 @@ const TopNav = () => {
           to="#"
           location={{}}
           className="menu-button d-none d-md-block"
-         onClick={sideBarHandler}
+          onClick={sideBarHandler}
         >
           <MobileMenuIcon />
         </NavLink>
@@ -70,17 +95,8 @@ const TopNav = () => {
         </NavLink>
 
         <div className="search">
-          <Input
-            name="searchKeyword"
-            id="searchKeyword"
-            placeholder='search'
-          
-            
-          />
-          <span
-            className="search-icon"
-            
-          >
+          <Input name="searchKeyword" id="searchKeyword" placeholder="search" />
+          <span className="search-icon">
             <i className="simple-icon-magnifier" />
           </span>
         </div>
@@ -93,18 +109,11 @@ const TopNav = () => {
               size="sm"
               className="language-button"
             >
-              <span className="name">{"locale".toUpperCase()}</span>
+              <span className="name">{'locale'.toUpperCase()}</span>
             </DropdownToggle>
             <DropdownMenu className="mt-3" right>
-              {[1,2,3,4,5].map((l) => {
-                return (
-                  <DropdownItem
-                   
-                    key={l}
-                  >
-                    {l}
-                  </DropdownItem>
-                );
+              {[1, 2, 3, 4, 5].map((l) => {
+                return <DropdownItem key={l}>{l}</DropdownItem>;
               })}
             </DropdownMenu>
           </UncontrolledDropdown>
@@ -123,7 +132,7 @@ const TopNav = () => {
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"
-            id="fullScreenButton"  
+            id="fullScreenButton"
           >
             {true ? (
               <i className="simple-icon-size-actual d-block" />
@@ -144,11 +153,13 @@ const TopNav = () => {
               <DropdownItem>Account</DropdownItem>
               <DropdownItem>Features</DropdownItem>
               <DropdownItem>History</DropdownItem>
-              <DropdownItem>Support</DropdownItem>
+              {oppositeUser && (
+                <DropdownItem onClick={userTypeHandler}>
+                  Switch to {oppositeUser.user}
+                </DropdownItem>
+              )}
               <DropdownItem divider />
-              <DropdownItem >
-                Sign out
-              </DropdownItem>
+              <DropdownItem>Sign out</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </div>
@@ -157,5 +168,4 @@ const TopNav = () => {
   );
 };
 
-
-export default TopNav
+export default TopNav;

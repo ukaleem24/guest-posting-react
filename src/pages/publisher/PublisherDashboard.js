@@ -17,7 +17,7 @@ import classes from "../../assets/css/cutom_css/buyer/dashboard/dashboard.module
 
 
 
-const BuyerDashboard = () => {
+const PublisherDashboard = () => {
 
 
   const sidebarButtonPressed = useSelector(
@@ -36,18 +36,11 @@ const BuyerDashboard = () => {
       </div>
       <Footer />
     </div>
-    // <div id="app-container" >
-    //   <TopNav history={history} />
-    //   <Sidebar />
-    //   <div>
-    //     <div className={classes.container}>{children}</div>
-    //   </div>
-    //   <Footer />
-    // </div>
+    
   );
 };
 
-export default BuyerDashboard;
+export default PublisherDashboard;
 
 
 

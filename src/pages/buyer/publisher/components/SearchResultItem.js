@@ -1,28 +1,32 @@
 import React from 'react';
-import { Card, CardBody, Row, Col,  FormGroup } from 'reactstrap';
-import classes from "assets/css/cutom_css/buyer/publisher/searchResultItem.module.css";
+import { Card, CardBody, Row, Col, FormGroup } from 'reactstrap';
+import classes from 'assets/css/cutom_css/buyer/publisher/searchResultItem.module.css';
 import { NavLink } from 'react-router-dom';
 
-const SearchResultItem = ({item}) => {
+const SearchResultItem = ({ item }) => {
   return (
     <Card className={classes.card}>
       <CardBody className={classes.card_body}>
         <Row className={classes.container}>
-          <Col >
-          <div className={classes.button_row_container}>
-            <Row  className={classes.button_row}>
-              
-              <Col className={[classes.item_header]} sm={10}>
-                <p className={classes.url}>URL is Hidden</p>
-              </Col>
-              <Col sm={2}   className={classes.button_col_container}>
-                <div  className={classes.button_container}>
-                <NavLink className={classes.button} to="/marketer/tasks/create-task">Buy Post</NavLink>
-                </div>
-              </Col>
-            </Row> 
-            </div> 
-            <Row>
+          <Col>
+            <div className={classes.button_row_container}>
+              <Row className={classes.button_row}>
+                <Col className={[classes.item_header]} sm={10}>
+                  <p className={classes.url}>URL is Hidden</p>
+                </Col>
+                <Col sm={2} className={classes.button_col_container}>
+                  <div className={classes.button_container}>
+                    <NavLink
+                      className={classes.btnn}
+                      to="/marketer/tasks/create-task"
+                    >
+                      Buy Post
+                    </NavLink>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+            <Row className={classes['card-body-conatainer']}>
               <Col sm={5}>
                 <Row>
                   <Col>
@@ -54,7 +58,7 @@ const SearchResultItem = ({item}) => {
                           <Col>
                             <p className={classes.labels}>Long article:</p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                            ${item.Longarticle}
+                              ${item.Longarticle}
                             </p>
                           </Col>
                         </Row>
@@ -63,16 +67,14 @@ const SearchResultItem = ({item}) => {
                         <Row>
                           <Col>
                             <p className={classes.labels}>DA:</p>
-                            <p >
-                            {item.da}
-                            </p>
+                            <p>{item.da}</p>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
                             <p className={classes.labels}>DR:</p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                            {item.DR}
+                              {item.DR}
                             </p>
                           </Col>
                         </Row>
@@ -96,7 +98,7 @@ const SearchResultItem = ({item}) => {
                           <Col>
                             <p className={classes.labels}>TAT:</p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                            {item.TAT}
+                              {item.TAT}
                             </p>
                           </Col>
                         </Row>
@@ -110,9 +112,11 @@ const SearchResultItem = ({item}) => {
                         </Row>
                         <Row>
                           <Col>
-                            <p className={classes.labels}>Avg lifetime of links:</p>
+                            <p className={classes.labels}>
+                              Avg lifetime of links:
+                            </p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                            {item.Avglifetimeoflinks}
+                              {item.Avglifetimeoflinks}
                             </p>
                           </Col>
                         </Row>
@@ -128,7 +132,7 @@ const SearchResultItem = ({item}) => {
                           <Col>
                             <p className={classes.labels}>Language:</p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                             {item.Language}
+                              {item.Language}
                             </p>
                           </Col>
                         </Row>
@@ -152,7 +156,7 @@ const SearchResultItem = ({item}) => {
                           <Col>
                             <p className={classes.labels}>Country:</p>
                             <p className={classes.labelsValueAdjustingMargin}>
-                            {item.Country}
+                              {item.Country}
                             </p>
                           </Col>
                         </Row>
@@ -163,7 +167,6 @@ const SearchResultItem = ({item}) => {
               </Col>
             </Row>
           </Col>
-          
         </Row>
       </CardBody>
     </Card>
