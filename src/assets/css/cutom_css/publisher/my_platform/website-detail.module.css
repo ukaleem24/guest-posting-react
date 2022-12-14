@@ -1,0 +1,119 @@
+
+.container{
+  margin:0px 0px 0px 0px;
+  padding:0px 0px 0px 0px;
+  
+}
+
+.item_header {
+  color: #922c88;
+  padding: 10px 0px 0px 10px;
+  /* padding: 0px 15px 0px 0px; */
+  /* margin: 0px 0px 10px 0px;     */
+}
+.url {
+  margin: 0px 0px 0px 18px;
+}
+.labels {
+  margin: 0px 0px 0px;
+  color: #7e7e7e;
+}
+.post-prices{
+  margin: 0px 0px 5px;
+  font-size: 0.8rem;
+}
+
+.card {
+  margin-bottom: 8px;
+  border: 0.5px solid #c5c4c4;
+  border-radius: 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.card_body {
+  padding: 0rem 1rem 0rem 1rem;
+}
+.btnn {
+  /* float: right; */
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background-color: #922c88;
+  border-color: #922c88;
+  color: white;
+
+  text-align: center;
+  border-radius: 30px !important;
+  padding: 0px ;
+  margin-left: 5px;
+}
+
+.btnn:hover {
+  background-color: #4556ac;
+  border-color: #4556ac;
+  color: white;
+}
+.btnn:focus-visible {
+  background-color: #630374;
+  border-color: #630374;
+  color: white;
+}
+
+.button_row {
+  /* background-color:  #faefef  ; */
+  background-color: #eceef7;
+
+  /* background: linear-gradient(90deg, #f4e9f3 0%, #faefef 35%, #f7efec 100%);
+  border: 1px solid
+    linear-gradient(90deg, #52125a 0%, #641863 35%, #be22af 100%); */
+
+  background: linear-gradient(90deg, #f2ecf7 0%, #f7ecf3 35%, #f7efec 100%);
+  border: 1px solid
+    linear-gradient(90deg, #52125a 0%, #641863 35%, #be22af 100%);
+  padding: 5px 0px;
+
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.button_row_container {
+  padding: 0px 0px 10px 0px;
+}
+.button_col_container {
+  padding: 0px 20px 0px 20px;
+  float: right;
+  display: flex;
+  justify-content: end;
+}
+
+i {
+  padding: 0.4rem 1rem;
+  font-size: 17px;
+  display: inline-block;
+}
+.post-container{
+  display: flex;
+
+}
+.col-adjusting{
+ padding: 0px 0px 0px 15px;
+}
+.content-placement{
+  padding-left: 15px;
+}
+
+.button-container{
+  margin-bottom: 20px;
+  margin-left:15px
+}
+
+.icon-button{
+  display: inline-block;
+  
+  background-color: #922c88;
+  border-color: #922c88;
+  color: white;
+
+  text-align: center;
+  border-radius: 30px !important;
+  padding: 0.20rem 0.20rem;
+  margin-left: 5px;
+}

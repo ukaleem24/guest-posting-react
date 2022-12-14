@@ -16,7 +16,7 @@ import {
   Input,
 } from 'reactstrap';
 
-import { NavLink,useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 // import { connect } from 'react-redux';
 
 // import {
@@ -41,6 +41,7 @@ import TopnavDarkSwitch from './Topnav.DarkSwitch';
 const TopNav = () => {
   const navigate = useNavigate();
   const [oppositeUser, setOppositeUser] = useState();
+  const [isFirstMount, setIsFirstMount] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -48,29 +49,43 @@ const TopNav = () => {
     dispatch(sidebarButtonActions.toggal());
   };
 
+  const userType = useSelector((state) => state.usertype.userType);
+  // const oppositeUserHandler = () => {
+  //   if (userType === 'publisher') {
+  //     setOppositeUser({
+  //       user: 'Buyer',
+  //     });
+  //     navigate('/publisher/platform');
+  //   } else {
+  //     setOppositeUser({
+  //       user: 'Publisher',
+  //     });
+  //     navigate('/marketer/publishers');
+  //   }
+  // };
+
   const userTypeHandler = () => {
     dispatch(UserTypeActions.ChangeUserType());
+    // oppositeUserHandler();
   };
 
-  const userType = useSelector((state) => state.usertype.userType);
-  console.log(userType);
-  console.log(userType);
-  console.log(userType);
-  console.log(userType);
-
   useEffect(() => {
-    if (userType === 'publisher') {
-      setOppositeUser({
-        user: 'Buyer',
-      
-      });
-      navigate('/publisher/platform');
-    } else {
-      setOppositeUser({
-        user: 'Publisher',
-      });
-      navigate('/marketer/publishers');
-            
+    if (isFirstMount && userType === oppositeUser) {
+      if (userType === 'publisher') {
+        setOppositeUser('buyer');
+        navigate('/publisher/task');
+      } else {
+        setOppositeUser('publisher');
+        navigate('/marketer/publishers');
+      }
+    }
+    if (!isFirstMount) {
+      if (userType === 'publisher') {
+        setOppositeUser('buyer');
+      } else {
+        setOppositeUser('publisher');
+      }
+      setIsFirstMount(true);
     }
   }, [userType]);
 
@@ -155,7 +170,7 @@ const TopNav = () => {
               <DropdownItem>History</DropdownItem>
               {oppositeUser && (
                 <DropdownItem onClick={userTypeHandler}>
-                  Switch to {oppositeUser.user}
+                  Switch to {oppositeUser}
                 </DropdownItem>
               )}
               <DropdownItem divider />

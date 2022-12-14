@@ -26,7 +26,7 @@ const Publisher = () => {
     <>
       <Row>
         <Colxx xxs="12">
-          <Breadcrumb activePage="Publisher"  />
+          <Breadcrumb activePage="Publisher" mainpage="mainpage" />
           <Separator className="mb-5" />
         </Colxx>
       </Row>

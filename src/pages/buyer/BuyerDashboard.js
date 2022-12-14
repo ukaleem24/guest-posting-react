@@ -29,7 +29,7 @@ const BuyerDashboard = () => {
   return (
     <div id="app-container" >
       <TopNav  />
-      <Sidebar />
+      <Sidebar userType="buyer"/>
       <div className={sidebarButtonPressed?classes.dashboard_full_content_container:classes.dashboard_half_content_container}>
       {/* <Start/> */}
       <Outlet/>

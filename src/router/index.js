@@ -13,6 +13,7 @@ import PublisherDashboard from 'pages/publisher/PublisherDashboard';
 import Websites from 'pages/publisher/my_websites/Websites';
 import OpenOffers from 'pages/publisher/open_offers/OpenOffers';
 import PublisherTask from "pages/publisher/task/task"
+import AddWebsite from 'pages/publisher/my_websites/components/AddWebsite';
 // import BuyPost from 'pages/buyer/publisher/components/buy_post/BuyPost';
 
 const Router = () => {
@@ -39,6 +40,7 @@ const Router = () => {
         </Route>
         <Route path="/publisher" element={<PublisherDashboard/>}>
             <Route path='/publisher/platform' element={<Websites/>}/>
+            <Route path='/publisher/platform/add-website' element={<AddWebsite/>}/>
             <Route path='/publisher/offer' element={<OpenOffers/>}/>
             <Route path='/publisher/task' element={<PublisherTask/>}/>
         </Route>

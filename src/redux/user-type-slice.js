@@ -6,6 +6,7 @@ const UserTypeSlice = createSlice({
     initialState:{userType:"buyer"},
     reducers:{
         ChangeUserType(state){
+            console.log("level1");
             if(state.userType==="buyer")
                 state.userType="publisher"; // eslint-disable-line no-param-reassign
             else if(state.userType==="publisher")

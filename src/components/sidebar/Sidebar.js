@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux';
 import classes from '../../assets/css/cutom_css/sidebar/sidebar.module.css';
 // import { useEffect } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({userType}) => {
 
   const [sidebarMenu,setSidebarMenu]=useState();
 
@@ -20,9 +20,9 @@ const Sidebar = () => {
     (state) => state.sidebarButton.sidebarButtonPressed
   );
 
-  const userType=useSelector(
-    (state)=>state.usertype.userType
-  )
+  // const userType=useSelector(
+  //   (state)=>state.usertype.userType
+  // )
   const buyerSidebarMenu=useSelector((state) => state.sidebar.buyerSidebar);
   const publisherSidebarmenu=useSelector((state) => state.sidebar.publisherSidebar);
 

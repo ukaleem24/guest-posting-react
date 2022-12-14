@@ -19,7 +19,7 @@ const sidebarSlice = createSlice({
       },
       {
         id:3,
-        name: 'Task',
+        name: 'Tasks',
         icon:"simple-icon-people",
         link:"/marketer/tasks",
       },
@@ -45,7 +45,7 @@ const sidebarSlice = createSlice({
         },
         {
           id:3,
-          name: 'Task',
+          name: 'Tasks',
           icon:"simple-icon-people",
           link:"/publisher/task",
         },
