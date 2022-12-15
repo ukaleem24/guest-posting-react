@@ -1,15 +1,25 @@
-/* 
+
 .label{
     margin-bottom: -4px;
+    /* color:#686767 */
+
+    color:#878787;
 }
 
 .inputTypeText{
     border-radius: 7px;
+    background-color: #f8f8f8   ;
+   
 }
 
 .inputTypeDropDown{
     border-radius: 7px;
     margin-bottom: 16px;
+    background-color: #f8f8f8   ;
+}
+
+.card_Constainer{
+    border-radius: 14px;
 }
 
 @media (max-width:40rem){
@@ -17,9 +27,4 @@
         border-radius: 7px;
         max-width: 10rem;
     }
-} */
-
-.search-label{
-    color: #7e7e7e;
-     
 }

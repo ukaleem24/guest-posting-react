@@ -1,8 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-use-before-define */
-import React, { useState } from 'react';
-import { injectIntl } from 'react-intl';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { sidebarButtonActions } from 'redux/sidebar-button-slice';
+import { UserTypeActions } from 'redux/user-type-slice';
+
+// import { injectIntl } from 'react-intl';
 
 import {
   UncontrolledDropdown,
@@ -12,191 +16,79 @@ import {
   Input,
 } from 'reactstrap';
 
-import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+// import { connect } from 'react-redux';
 
-import {
-  setContainerClassnames,
-  clickOnMobileMenu,
-  changeLocale,
-} from 'redux/actions';
+// import {
+//   setContainerClassnames,
+//   clickOnMobileMenu,
+//   changeLocale,
+// } from 'redux/actions';
 
-import {
-  menuHiddenBreakpoint,
-  searchPath,
-  localeOptions,
-  isDarkSwitchActive,
-  adminRoot,
-} from 'constants/defaultValues';
+import // menuHiddenBreakpoint,
+// searchPath,
+// localeOptions,
+// isDarkSwitchActive,
+// adminRoot,
+'constants/defaultValues';
 
-import { MobileMenuIcon, MenuIcon } from 'components/svg';
-import { getDirection, setDirection } from 'helpers/Utils';
-import TopnavEasyAccess from './Topnav.EasyAccess';
+import { MobileMenuIcon } from 'components/svg';
+// import { getDirection, setDirection } from 'helpers/Utils';
+// import TopnavEasyAccess from './Topnav.EasyAccess';
 import TopnavNotifications from './Topnav.Notifications';
 import TopnavDarkSwitch from './Topnav.DarkSwitch';
 
-const TopNav = ({
-  intl,
-  history,
-  containerClassnames,
-  menuClickCount,
-  selectedMenuHasSubItems,
-  locale,
-  setContainerClassnamesAction,
-  clickOnMobileMenuAction,
-  changeLocaleAction,
-}) => {
-  const [isInFullScreen, setIsInFullScreen] = useState(false);
-  const [searchKeyword, setSearchKeyword] = useState('');
+const TopNav = () => {
+  const navigate = useNavigate();
+  const [oppositeUser, setOppositeUser] = useState();
+  const [isFirstMount, setIsFirstMount] = useState(false);
 
-  const search = () => {
-    history.push(`${searchPath}?key=${searchKeyword}`);
-    setSearchKeyword('');
+  const dispatch = useDispatch();
+
+  const sideBarHandler = () => {
+    dispatch(sidebarButtonActions.toggal());
   };
 
-  const handleChangeLocale = (_locale, direction) => {
-    changeLocaleAction(_locale);
+  const userType = useSelector((state) => state.usertype.userType);
+  // const oppositeUserHandler = () => {
+  //   if (userType === 'publisher') {
+  //     setOppositeUser({
+  //       user: 'Buyer',
+  //     });
+  //     navigate('/publisher/platform');
+  //   } else {
+  //     setOppositeUser({
+  //       user: 'Publisher',
+  //     });
+  //     navigate('/marketer/publishers');
+  //   }
+  // };
 
-    const currentDirection = getDirection().direction;
-    if (direction !== currentDirection) {
-      setDirection(direction);
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
-    }
+  const userTypeHandler = () => {
+    dispatch(UserTypeActions.ChangeUserType());
+    // oppositeUserHandler();
   };
 
-  const isInFullScreenFn = () => {
-    return (
-      (document.fullscreenElement && document.fullscreenElement !== null) ||
-      (document.webkitFullscreenElement &&
-        document.webkitFullscreenElement !== null) ||
-      (document.mozFullScreenElement &&
-        document.mozFullScreenElement !== null) ||
-      (document.msFullscreenElement && document.msFullscreenElement !== null)
-    );
-  };
-
-  const handleSearchIconClick = (e) => {
-    if (window.innerWidth < menuHiddenBreakpoint) {
-      let elem = e.target;
-      if (!e.target.classList.contains('search')) {
-        if (e.target.parentElement.classList.contains('search')) {
-          elem = e.target.parentElement;
-        } else if (
-          e.target.parentElement.parentElement.classList.contains('search')
-        ) {
-          elem = e.target.parentElement.parentElement;
-        }
-      }
-
-      if (elem.classList.contains('mobile-view')) {
-        search();
-        elem.classList.remove('mobile-view');
-        removeEventsSearch();
+  useEffect(() => {
+    if (isFirstMount && userType === oppositeUser) {
+      if (userType === 'publisher') {
+        setOppositeUser('buyer');
+        navigate('/publisher/task');
       } else {
-        elem.classList.add('mobile-view');
-        addEventsSearch();
+        setOppositeUser('publisher');
+        navigate('/marketer/publishers');
       }
-    } else {
-      search();
     }
-    e.stopPropagation();
-  };
-
-  const handleDocumentClickSearch = (e) => {
-    let isSearchClick = false;
-    if (
-      e.target &&
-      e.target.classList &&
-      (e.target.classList.contains('navbar') ||
-        e.target.classList.contains('simple-icon-magnifier'))
-    ) {
-      isSearchClick = true;
-      if (e.target.classList.contains('simple-icon-magnifier')) {
-        search();
+    if (!isFirstMount) {
+      if (userType === 'publisher') {
+        setOppositeUser('buyer');
+      } else {
+        setOppositeUser('publisher');
       }
-    } else if (
-      e.target.parentElement &&
-      e.target.parentElement.classList &&
-      e.target.parentElement.classList.contains('search')
-    ) {
-      isSearchClick = true;
+      setIsFirstMount(true);
     }
+  }, [userType]);
 
-    if (!isSearchClick) {
-      const input = document.querySelector('.mobile-view');
-      if (input && input.classList) input.classList.remove('mobile-view');
-      removeEventsSearch();
-      setSearchKeyword('');
-    }
-  };
-
-  const removeEventsSearch = () => {
-    document.removeEventListener('click', handleDocumentClickSearch, true);
-  };
-
-  const addEventsSearch = () => {
-    document.addEventListener('click', handleDocumentClickSearch, true);
-  };
-
-  const handleSearchInputKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      search();
-    }
-  };
-
-  const toggleFullScreen = () => {
-    const isFS = isInFullScreenFn();
-
-    const docElm = document.documentElement;
-    if (!isFS) {
-      if (docElm.requestFullscreen) {
-        docElm.requestFullscreen();
-      } else if (docElm.mozRequestFullScreen) {
-        docElm.mozRequestFullScreen();
-      } else if (docElm.webkitRequestFullScreen) {
-        docElm.webkitRequestFullScreen();
-      } else if (docElm.msRequestFullscreen) {
-        docElm.msRequestFullscreen();
-      }
-    } else if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-    setIsInFullScreen(!isFS);
-  };
-
-  const handleLogout = () => {
-    console.log('logout');
-  };
-
-  const menuButtonClick = (e, _clickCount, _conClassnames) => {
-    e.preventDefault();
-
-    setTimeout(() => {
-      const event = document.createEvent('HTMLEvents');
-      event.initEvent('resize', false, false);
-      window.dispatchEvent(event);
-    }, 350);
-    setContainerClassnamesAction(
-      _clickCount + 1,
-      _conClassnames,
-      selectedMenuHasSubItems
-    );
-  };
-
-  const mobileMenuButtonClick = (e, _containerClassnames) => {
-    e.preventDefault();
-    clickOnMobileMenuAction(_containerClassnames);
-  };
-
-  const { messages } = intl;
   return (
     <nav className="navbar fixed-top">
       <div className="d-flex align-items-center navbar-left">
@@ -204,34 +96,22 @@ const TopNav = ({
           to="#"
           location={{}}
           className="menu-button d-none d-md-block"
-          onClick={(e) =>
-            menuButtonClick(e, menuClickCount, containerClassnames)
-          }
+          onClick={sideBarHandler}
         >
-          <MenuIcon />
+          <MobileMenuIcon />
         </NavLink>
         <NavLink
           to="#"
           location={{}}
           className="menu-button-mobile d-xs-block d-sm-block d-md-none"
-          onClick={(e) => mobileMenuButtonClick(e, containerClassnames)}
+          onClick={sideBarHandler}
         >
           <MobileMenuIcon />
         </NavLink>
 
         <div className="search">
-          <Input
-            name="searchKeyword"
-            id="searchKeyword"
-            placeholder={messages['menu.search']}
-            value={searchKeyword}
-            onChange={(e) => setSearchKeyword(e.target.value)}
-            onKeyPress={(e) => handleSearchInputKeyPress(e)}
-          />
-          <span
-            className="search-icon"
-            onClick={(e) => handleSearchIconClick(e)}
-          >
+          <Input name="searchKeyword" id="searchKeyword" placeholder="search" />
+          <span className="search-icon">
             <i className="simple-icon-magnifier" />
           </span>
         </div>
@@ -244,40 +124,32 @@ const TopNav = ({
               size="sm"
               className="language-button"
             >
-              <span className="name">{locale.toUpperCase()}</span>
+              <span className="name">{'locale'.toUpperCase()}</span>
             </DropdownToggle>
             <DropdownMenu className="mt-3" right>
-              {localeOptions.map((l) => {
-                return (
-                  <DropdownItem
-                    onClick={() => handleChangeLocale(l.id, l.direction)}
-                    key={l.id}
-                  >
-                    {l.name}
-                  </DropdownItem>
-                );
+              {[1, 2, 3, 4, 5].map((l) => {
+                return <DropdownItem key={l}>{l}</DropdownItem>;
               })}
             </DropdownMenu>
           </UncontrolledDropdown>
         </div>
       </div>
-      <NavLink className="navbar-logo" to={adminRoot}>
+      <NavLink className="navbar-logo" to="#">
         <span className="logo d-none d-xs-block" />
         <span className="logo-mobile d-block d-xs-none" />
       </NavLink>
 
       <div className="navbar-right">
-        {isDarkSwitchActive && <TopnavDarkSwitch />}
+        {true && <TopnavDarkSwitch />}
         <div className="header-icons d-inline-block align-middle">
-          <TopnavEasyAccess />
+          {/* <TopnavEasyAccess /> */}
           <TopnavNotifications />
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"
             id="fullScreenButton"
-            onClick={toggleFullScreen}
           >
-            {isInFullScreen ? (
+            {true ? (
               <i className="simple-icon-size-actual d-block" />
             ) : (
               <i className="simple-icon-size-fullscreen d-block" />
@@ -296,11 +168,13 @@ const TopNav = ({
               <DropdownItem>Account</DropdownItem>
               <DropdownItem>Features</DropdownItem>
               <DropdownItem>History</DropdownItem>
-              <DropdownItem>Support</DropdownItem>
+              {oppositeUser && (
+                <DropdownItem onClick={userTypeHandler}>
+                  Switch to {oppositeUser}
+                </DropdownItem>
+              )}
               <DropdownItem divider />
-              <DropdownItem onClick={() => handleLogout()}>
-                Sign out
-              </DropdownItem>
+              <DropdownItem>Sign out</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </div>
@@ -309,20 +183,4 @@ const TopNav = ({
   );
 };
 
-const mapStateToProps = ({ menu, settings }) => {
-  const { containerClassnames, menuClickCount, selectedMenuHasSubItems } = menu;
-  const { locale } = settings;
-  return {
-    containerClassnames,
-    menuClickCount,
-    selectedMenuHasSubItems,
-    locale,
-  };
-};
-export default injectIntl(
-  connect(mapStateToProps, {
-    setContainerClassnamesAction: setContainerClassnames,
-    clickOnMobileMenuAction: clickOnMobileMenu,
-    changeLocaleAction: changeLocale,
-  })(TopNav)
-);
+export default TopNav;

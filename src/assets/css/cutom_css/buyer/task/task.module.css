@@ -1,0 +1,43 @@
+.highlightsContainer{
+
+    padding:20px 20px;
+    /* background-color: rgba(2,0,36,1)	; */
+    background: linear-gradient(90deg, #52125a 0%, #641863 35%, #be22af 100%);
+    border: 1px solid linear-gradient(90deg, #52125a 0%, #641863 35%, #be22af 100%);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.highlightsButton{
+    float: right;
+}
+.highlightsText{
+    margin-top: 7px;
+}
+
+.btnn{
+    background-color: #40014b;;
+    border-color: #40014b;
+    color: white; 
+    
+} 
+
+.btnn:hover{
+    background-color: #630374;;
+    border-color: #630374;
+    color: white; 
+}
+.btnn:focus-visible{
+    background-color: #630374;;
+    border-color: #630374;
+    color: white; 
+}
+
+.higlighted-text{
+    margin: 0;
+    font-size: 20px;
+}

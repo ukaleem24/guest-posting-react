@@ -1,10 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-
+import "./testing.css"
 // import { Row } from 'reactstrap';
 // import IntlMessages from 'helpers/IntlMessages';
 import { Colxx, Separator } from 'components/common/CustomBootstrap';
-import Breadcrumb from 'containers/navs/Breadcrumb';
+// import Breadcrumb from 'containers/navs/Breadcrumb';
 import Filter from 'components/search/Filter';
 import NavBarSearchResults from 'components/search/NavSearchResult';
 import SortingFilterSearchResult from 'components/search/SortingFilterSearchResult';
@@ -12,20 +12,20 @@ import SearchResultList from 'components/search/SearchResultList';
 
 // import DatePickerExamples from '../../../containers/forms/DatePickerExamples';
 
-const Start = ({ match }) => (
+const Start = () => (
   // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // const toggle = () => setDropdownOpen(!dropdownOpen);
   <>
     <Row>
       <Colxx xxs="12">
-        <Breadcrumb heading="menu.start" match={match} />
+        {/* <Breadcrumb heading="menu.start" match={match} /> */}
         <Separator className="mb-5" />
       </Colxx>
     </Row>
     <Row>
       <Colxx xxs="12" className="mb-4">
-        <h1>Search for verified publishers</h1>
+        <h1 className='search-label'>Search for verified publishers</h1>
       </Colxx>
     </Row>
     <Row>
