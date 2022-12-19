@@ -15,7 +15,7 @@ const sidebarSlice = createSlice({
         id:2,
         name: 'Open Offers',
         icon:"iconsminds-data-center",
-        link:"/notfound",
+        link:"/marketer/offer",
       },
       {
         id:3,
