@@ -13,7 +13,7 @@ const OpenOfferForm = () => {
       </Row>
       <Row>
         <Colxx xxs="12">
-          <p className={classes.label}>
+          <p className={classes['heading-description']}>
             Open offer allows you to continuously order sponsored posts for your
             site with no extra troubles. Open offers work on a bidding scheme -
             publishers bid with their price suggestion and a relevant website,

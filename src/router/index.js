@@ -24,6 +24,8 @@ import NewBid from 'pages/buyer/open_offers/offer_bids/components/Navbar_Options
 import AllOffers from 'pages/buyer/open_offers/components/navbar_options/AllOffers';
 import ActiveOffers from 'pages/buyer/open_offers/components/navbar_options/ActiveOffers';
 import PausedOffers from 'pages/buyer/open_offers/components/navbar_options/PausedOffers';
+import TaskDetail from 'pages/publisher/task/task_detail/TaskDetail';
+import BidOffer from 'pages/publisher/open_offers/make_a_bid/BidOffer';
 // import BuyPost from 'pages/buyer/publisher/components/buy_post/BuyPost';
 
 const Router = () => {
@@ -80,7 +82,9 @@ const Router = () => {
             element={<AddWebsiteForm />}
           />
           <Route path="/publisher/offer" element={<OpenOffers />} />
+          <Route path="/publisher/offer/view/1234" element={<BidOffer />} />
           <Route path="/publisher/task" element={<PublisherTask />} />
+          <Route path="/publisher/task/view/1234" element={<TaskDetail />} />
         </Route>
 
         {/* </Route> */}
