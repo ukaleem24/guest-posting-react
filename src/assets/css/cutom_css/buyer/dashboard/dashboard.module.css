@@ -14,6 +14,11 @@
   transition: 0.5s ease;
   transform: translateX(0px);
 }
+.page-main-heading{
+  color: #394852;
+    padding: 0px;
+    font-size: 40px;
+}
 
 @media (max-width: 40rem) {
   .dashboard_full_content_container {

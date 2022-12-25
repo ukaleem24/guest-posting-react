@@ -8,7 +8,7 @@ const OpenOfferForm = () => {
     <>
       <Row>
         <Colxx xxs="12">
-          <h1 className={classes.heading}>Create an open offer</h1>
+          <h1 className={classes.search_label}>Create an open offer</h1>
         </Colxx>
       </Row>
       <Row>

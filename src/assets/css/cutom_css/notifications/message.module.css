@@ -1,0 +1,54 @@
+.row-adjusting {
+  margin-left: 0px;
+}
+.label {
+  color: #878787;
+}
+.card {
+  margin-bottom: 8px;
+  /* border: 0.5px solid #c5c4c4; */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card_body {
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+.calender-container {
+  background-color: #922c88;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 15px 15px 0px 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cross-icon {
+  float: right !important;
+  font-size: 15px;
+  padding: 3px 6px;
+  background-color: #922c88;
+  color: white;
+  cursor: pointer;
+}
+.message-box {
+  padding: 20px 0px 0px 0px;
+  /* padding: 0px 15px 0px 0px; */
+  /* margin: 0px 0px 10px 0px;     */
+}
+.url {
+  margin: 0px 0px 0px 18px;
+}
+.button-col-container {
+  padding: 15px 20px 0px 20px;
+}
+.message-data-container {
+  display: flex;
+}
+@media (max-width: 40rem) {
+  .button-col-container {
+    padding: 15px 8px 0px 8px;
+  }
+}

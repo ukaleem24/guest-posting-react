@@ -20,8 +20,10 @@ const AddWebsite = () => {
   return (
     <>
       <Row>
-        <Colxx xxs="12">
-          <h1 >Add website </h1>
+        <Colxx xxs="12" className="mb-4">
+          <h1 className={classes.search_label}>
+            <b>Add Website</b>
+          </h1>
         </Colxx>
       </Row>
       <Row className={classes['complition-bar-container']}>

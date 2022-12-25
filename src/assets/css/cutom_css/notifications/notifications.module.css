@@ -1,0 +1,15 @@
+.bell {
+  font-size: 17px;
+  color: purple;
+  cursor: pointer;
+}
+.notifications-container{
+position: relative;
+top: -10px;
+background-color: red;
+font-weight: bold;
+padding: 1px 4px;
+color: white;
+border-radius: 80px;
+cursor: pointer;
+}

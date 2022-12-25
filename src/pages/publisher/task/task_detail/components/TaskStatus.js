@@ -6,11 +6,11 @@ import { Separator } from 'components/common/CustomBootstrap';
 const TaskStatus = () => {
   return (
     <>
-      <Row>
+      {/* <Row>
         <Col>
           <h1 className={classes['main-heading']}>Task #2087</h1>
         </Col>
-      </Row>
+      </Row> */}
 
       <Card className={classes.card}>
         <CardBody className={classes.card_body}>

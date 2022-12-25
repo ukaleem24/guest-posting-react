@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  Button,
   Col,
   Dropdown,
   DropdownItem,
@@ -18,17 +19,19 @@ const MakeBid = () => {
     <>
       <Row>
         <Col>
-          <h2 className={classes.heading}>Search Results</h2>
+          <h2 className={classes.heading}>Make a bid</h2>
         </Col>
       </Row>
       <Row>
-        <Col>
-          <h6 className={classes.label}>Search Results</h6>
+        <Col sm={5}>
+          <h6 className={classes.label}>Your Website</h6>
           <div>
             <Dropdown isOpen={dropdownOpen} toggle={toggle}>
               <DropdownToggle data-toggle="dropdown" tag="span">
                 <Col className={classes['category-container']}>
-                  <div>Choose Category</div>
+                  <div className="mt-2">
+                    <p className={classes['input-placeholder']}>Choose Website</p>
+                  </div>
                   <div className={classes['drop-down-icon']}>
                     <i className="simple-icon-arrow-down" />
                   </div>
@@ -41,8 +44,8 @@ const MakeBid = () => {
             </Dropdown>
           </div>
         </Col>
-        <Col>
-        <h6 className={classes.label}>Search Results</h6>
+        <Col sm={5}>
+          <h6 className={classes.label}>Offer you price</h6>
           <div>
             <FormGroup>
               <Input
@@ -50,10 +53,13 @@ const MakeBid = () => {
                 name="text"
                 type="text"
                 className={classes['title-container']}
-                placeholder="Separate each keyword with a comma"
+                placeholder="$0.00"
               />
             </FormGroup>
           </div>
+        </Col>
+        <Col sm={2}>
+        <Button>Make a bid</Button>
         </Col>
       </Row>
     </>

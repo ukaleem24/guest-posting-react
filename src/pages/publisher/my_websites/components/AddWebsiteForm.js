@@ -21,10 +21,10 @@ import classes from 'assets/css/cutom_css/publisher/my_platform/add-website.modu
 const AddWebsiteForm = () => {
   const [dropdownOpenCategorey, setDropdownOpenCategorey] = useState(false);
   const [dropdownOpenLanguage, setDropdownOpenLanguage] = useState(false);
-  const [articleExamplePressedNumber, setArticleExamplePressedNumber] =useState(0);
+  const [articleExamplePressedNumber, setArticleExamplePressedNumber] =
+    useState(0);
 
-  const [contentPlacement,setContentPlacement]=useState(false);
-
+  const [contentPlacement, setContentPlacement] = useState(false);
 
   const toggleCategorey = () =>
     setDropdownOpenCategorey((prevState) => !prevState);
@@ -35,24 +35,23 @@ const AddWebsiteForm = () => {
     setArticleExamplePressedNumber((previousNumber) => previousNumber + 1);
   };
 
-
-
-const contentPlacementHandler=()=>{
-  setContentPlacement((previousState)=>!previousState);
-}
-
+  const contentPlacementHandler = () => {
+    setContentPlacement((previousState) => !previousState);
+  };
 
   return (
     <>
       <Row>
-        <Colxx xxs="12">
-          <h1>Add your website info</h1>
+        <Colxx xxs="12" className="mb-4">
+          <h1 className={classes.search_label}>
+            <b>Add your website info</b>
+          </h1>
         </Colxx>
       </Row>
+      
+
       <Row className={classes['complition-bar-container']}>
         <Col xs={6} className={classes['first-colums-fill']} />
-        
-        
       </Row>
       <Card className={classes.card}>
         <CardBody className={classes['card-body']}>
@@ -249,15 +248,19 @@ const contentPlacementHandler=()=>{
                       type="text"
                       className={classes['amount-text-box']}
                       placeholder="0.00"
-                      
                     />
                     <span className={classes['dollor-sign']}>$</span>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <Collapse isOpen={contentPlacement} className={classes['collapse-container']}>
-                      <p className={classes['collapse-label']}>How many links can be placed in one article?</p>
+                    <Collapse
+                      isOpen={contentPlacement}
+                      className={classes['collapse-container']}
+                    >
+                      <p className={classes['collapse-label']}>
+                        How many links can be placed in one article?
+                      </p>
                       <Dropdown
                         isOpen={dropdownOpenLanguage}
                         toggle={toggleLanguage}

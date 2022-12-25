@@ -33,10 +33,11 @@ import // menuHiddenBreakpoint,
 'constants/defaultValues';
 
 import { MobileMenuIcon } from 'components/svg';
+import Notifications from './Notifications';
 // import { getDirection, setDirection } from 'helpers/Utils';
 // import TopnavEasyAccess from './Topnav.EasyAccess';
-import TopnavNotifications from './Topnav.Notifications';
-import TopnavDarkSwitch from './Topnav.DarkSwitch';
+// import TopnavNotifications from './Topnav.Notifications';
+// import TopnavDarkSwitch from './Topnav.DarkSwitch';
 
 const TopNav = () => {
   const navigate = useNavigate();
@@ -140,10 +141,10 @@ const TopNav = () => {
       </NavLink>
 
       <div className="navbar-right">
-        {true && <TopnavDarkSwitch />}
+        {/* {true && <TopnavDarkSwitch />}
         <div className="header-icons d-inline-block align-middle">
           {/* <TopnavEasyAccess /> */}
-          <TopnavNotifications />
+          {/* <TopnavNotifications />
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"
@@ -155,7 +156,8 @@ const TopNav = () => {
               <i className="simple-icon-size-fullscreen d-block" />
             )}
           </button>
-        </div>
+        </div> */} 
+        <Notifications/>
         <div className="user d-inline-block">
           <UncontrolledDropdown className="dropdown-menu-right">
             <DropdownToggle className="p-0" color="empty">

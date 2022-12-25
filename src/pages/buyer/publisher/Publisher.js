@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 
-import { Colxx, Separator } from 'components/common/CustomBootstrap';
+import { Colxx } from 'components/common/CustomBootstrap';
 
-import Breadcrumb from 'components/breadcrumb/BreadCrumb';
+// import Breadcrumb from 'components/breadcrumb/BreadCrumb';
 
 import Filter from './components/Filter';
 import NavBarSearchResults from './components/NavSearchResult';
@@ -24,16 +24,16 @@ const Publisher = () => {
 
   return (
     <>
-      <Row>
+      {/* <Row>
         <Colxx xxs="12">
           <Breadcrumb activePage="Publisher" mainpage="mainpage" />
           <Separator className="mb-5" />
         </Colxx>
-      </Row>
+      </Row> */}
       <Row>
         <Colxx xxs="12" className="mb-4">
           <h1 className={classes.search_label}>
-            Search for verified publishers
+            <b>Verified publishers</b>
           </h1>
         </Colxx>
       </Row>

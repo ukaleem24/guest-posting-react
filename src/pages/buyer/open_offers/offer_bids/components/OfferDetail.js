@@ -14,11 +14,11 @@ const OfferDetail = () => {
   };
   return (
     <>
-      <Row>
+      {/* <Row>
         <Col>
           <h1 className={classes['main-heading']}>Open offer #2087</h1>
         </Col>
-      </Row>
+      </Row> */}
 
       <Card className={classes.card}>
         <CardBody className={classes.card_body}>

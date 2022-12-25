@@ -1,5 +1,11 @@
 .search_label{
-    color: #7e7e7e;
+    color: #394852;
     padding: 0px;
+    font-size: 40px;
      
+}
+.heading{
+    color: #7e7e7e;
+    font-weight: bold;
+    /* margin-bottom: 20px; */
 }
