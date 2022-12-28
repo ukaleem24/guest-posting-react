@@ -1,0 +1,13 @@
+.main-heading {
+  font-size: 7vw;
+  font-weight: bolder;
+  color: white;
+  line-height: 8vw;
+  /* font-style: Helvetica; */
+  font-family: 'SpaceGrotesk', sans-serif;
+  /* font: 700 8rem/9.3rem SpaceGrotesk,sans-serif; */
+}
+.img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import LandingPage from 'pages/LandingPage';
+// import LandingPage from 'pages/LandingPage';
 import BuyerDashboard from 'pages/buyer/BuyerDashboard';
 // import Start from "views/app/gogo/start";
 import Publisher from 'pages/buyer/publisher/Publisher';
@@ -33,13 +33,17 @@ import RejectedBids from 'pages/publisher/open_offers/make_a_bid/components/Navb
 import Notification from 'pages/notification/Notification';
 import UnreadNotification from 'pages/notification/components/navbar_options/UnreadNotification';
 import ReadNotification from 'pages/notification/components/navbar_options/ReadNotification';
+// import Login from 'pages/Auth/Login';
+import SignUp from 'pages/Auth/SignUp';
+// import Home from 'pages/landing-page/home';
 // import BuyPost from 'pages/buyer/publisher/components/buy_post/BuyPost';
 
 const Router = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        {/* <Route path="/" element={<LandingPage />} /> */}
+        <Route path="/" element={<SignUp />} />
         
 
         {/* <Route path='/marketer/publishers' element={<SearchForPublishers/>} /> */}
