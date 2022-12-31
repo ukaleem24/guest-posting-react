@@ -21,7 +21,7 @@ const Login = () => {
           {!isSmallerThan62 && (
             <Col>
               <h6 className={classes['signup-container']}>
-                New User?<NavLink className={classes.signup}> Sign Up</NavLink>
+                New User?<NavLink className={classes.signup} to='/signup'> Sign Up</NavLink>
               </h6>
             </Col>
           )}
@@ -53,12 +53,12 @@ const Login = () => {
                 </h6>
                 <div className="d-flex justify-content-between align-items-center">
                   <p>Forget password?</p>
-                  <button
+                  <NavLink
                     className="btn btn-primary btn-lg btn-shadow"
-                    type="submit"
+                    to="/marketer/publishers"
                   >
                     LOGIN
-                  </button>
+                  </NavLink>
                 </div>
                 {isSmallerThan62 && (
                   <div>

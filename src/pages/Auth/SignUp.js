@@ -22,7 +22,7 @@ const SignUp = () => {
             <Col>
               <h6 className={classes['signup-container']}>
                 Already have an account?
-                <NavLink className={classes.signup}> Log In</NavLink>
+                <NavLink className={classes.signup} to='/login'> Log In</NavLink>
               </h6>
             </Col>
           )}

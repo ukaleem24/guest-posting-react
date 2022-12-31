@@ -33,9 +33,14 @@ import RejectedBids from 'pages/publisher/open_offers/make_a_bid/components/Navb
 import Notification from 'pages/notification/Notification';
 import UnreadNotification from 'pages/notification/components/navbar_options/UnreadNotification';
 import ReadNotification from 'pages/notification/components/navbar_options/ReadNotification';
-// import Login from 'pages/Auth/Login';
+import Login from 'pages/Auth/Login';
 import SignUp from 'pages/Auth/SignUp';
-// import Home from 'pages/landing-page/home';
+import Home from 'pages/landing-page/home';
+import AccountSetting from 'pages/account/AccountSetting';
+import Setting from 'pages/account/components/navbar-options/Setting';
+import Contact from 'pages/account/components/navbar-options/Contact';
+import NotificationSetting from 'pages/account/components/navbar-options/NotificationSetting';
+import MyRating from 'pages/rating_review/MyRating';
 // import BuyPost from 'pages/buyer/publisher/components/buy_post/BuyPost';
 
 const Router = () => {
@@ -43,8 +48,14 @@ const Router = () => {
     <>
       <Routes>
         {/* <Route path="/" element={<LandingPage />} /> */}
-        <Route path="/" element={<SignUp />} />
-        
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/account-detail" element={<AccountSetting />}>
+          <Route path="/account-detail/profile" element={<Setting />} />
+          <Route path="/account-detail/contact" element={<Contact />} />
+          <Route path="/account-detail/notification" element={<NotificationSetting />} />
+        </Route>
 
         {/* <Route path='/marketer/publishers' element={<SearchForPublishers/>} /> */}
         <Route path="/marketer" element={<BuyerDashboard />}>
@@ -82,6 +93,7 @@ const Router = () => {
         </Route>
         <Route path="/publisher" element={<PublisherDashboard />}>
           <Route path="/publisher/platform" element={<Websites />} />
+          <Route path="/publisher/rating" element={<MyRating />} />
           <Route
             path="/publisher/platform/add-website"
             element={<AddWebsite />}
@@ -114,9 +126,9 @@ const Router = () => {
         </Route>
 
         {/* </Route> */}
-        <Route path="/event" element={<Notification />} >
-        <Route path="/event/unread" element={<UnreadNotification />} />
-        <Route path="/event/read" element={<ReadNotification />} />
+        <Route path="/event" element={<Notification />}>
+          <Route path="/event/unread" element={<UnreadNotification />} />
+          <Route path="/event/read" element={<ReadNotification />} />
         </Route>
       </Routes>
     </>

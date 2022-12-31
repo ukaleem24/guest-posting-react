@@ -42,6 +42,7 @@ import Notifications from './Notifications';
 const TopNav = () => {
   const navigate = useNavigate();
   const [oppositeUser, setOppositeUser] = useState();
+  // const [accountSetting, setAccountSetting] = useState();
   const [isFirstMount, setIsFirstMount] = useState(false);
 
   const dispatch = useDispatch();
@@ -69,6 +70,12 @@ const TopNav = () => {
     dispatch(UserTypeActions.ChangeUserType());
     // oppositeUserHandler();
   };
+  const AccountSettingPageHandler=()=>{
+    navigate('/account-detail/profile')
+  }
+  const reviwPageHandler=()=>{
+    navigate('/publisher/rating');
+  }
 
   useEffect(() => {
     if (isFirstMount && userType === oppositeUser) {
@@ -144,7 +151,7 @@ const TopNav = () => {
         {/* {true && <TopnavDarkSwitch />}
         <div className="header-icons d-inline-block align-middle">
           {/* <TopnavEasyAccess /> */}
-          {/* <TopnavNotifications />
+        {/* <TopnavNotifications />
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"
@@ -156,8 +163,8 @@ const TopNav = () => {
               <i className="simple-icon-size-fullscreen d-block" />
             )}
           </button>
-        </div> */} 
-        <Notifications/>
+        </div> */}
+        <Notifications />
         <div className="user d-inline-block">
           <UncontrolledDropdown className="dropdown-menu-right">
             <DropdownToggle className="p-0" color="empty">
@@ -167,8 +174,10 @@ const TopNav = () => {
               </span>
             </DropdownToggle>
             <DropdownMenu className="mt-3" right>
-              <DropdownItem>Account</DropdownItem>
-              <DropdownItem>Features</DropdownItem>
+              <DropdownItem onClick={AccountSettingPageHandler}>
+                Account Setting
+              </DropdownItem>
+              <DropdownItem onClick={reviwPageHandler}>My Rating & Reviews</DropdownItem>
               <DropdownItem>History</DropdownItem>
               {oppositeUser && (
                 <DropdownItem onClick={userTypeHandler}>

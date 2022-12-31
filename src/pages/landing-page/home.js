@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import { scroller } from 'react-scroll';
 import Headroom from 'react-headroom';
 import GlideComponent from 'components/carousel/GlideComponent';
-import { buyUrl, adminRoot } from 'constants/defaultValues';
+// import { buyUrl, adminRoot } from 'constants/defaultValues';
 import image from 'assets/img/landing-page/banner_img.png';
 import article from 'assets/img/landing-page/article.png'
 import article2 from 'assets/img/landing-page/article2.png'
@@ -292,14 +292,14 @@ const Home = () => {
             <div className="separator" />
           </li>
           <li className="nav-item text-center">
-            <a
+            <NavLink
               className="btn btn-outline-primary btn-sm mobile-menu-cta"
               target="_blank"
               rel="noopener noreferrer"
-              href={buyUrl}
+              to='/login'
             >
               Log In
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -363,14 +363,14 @@ const Home = () => {
                   </a>
                 </li>
                 <li className="nav-item pl-4">
-                  <a
+                  <NavLink
                     className="btn btn-outline-semi-light btn-sm pr-4 pl-4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={buyUrl}
+                    to='/login'
                   >
                     Log In
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
               {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -420,8 +420,9 @@ const Home = () => {
                     {/* eslint-disable-next-line react/jsx-no-target-blank */}
                     <NavLink
                       className="btn btn-light btn-xl mr-2 mb-2"
-                      href={adminRoot}
+                     to='/signup'
                       target="_blank"
+
                     >
                       <b>SIGN UP</b><i className="simple-icon-arrow-right" />
                       </NavLink>
